@@ -11,6 +11,7 @@ public class account {
 	public void deposit(double in)
 	{
 		balance = balance + in;
+		System.out.println("$" + in + " has been deposited to your account.");
 	}
 	public double getBalance() 
 	{
@@ -29,5 +30,6 @@ public class account {
 			terminterest = intrrate / 12;
 			balance = balance * (1+terminterest);
 		}
+		System.out.println("Your account balance after this interest term is $" + balance + ".");
 	}
 }
