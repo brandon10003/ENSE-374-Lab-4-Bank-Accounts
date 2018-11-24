@@ -1,8 +1,29 @@
 import java.io.*;
 import java.util.*;
-
+/**
+ * 
+ * @author clark27b
+ *
+ */
 public class main {
-
+	/**
+	 * 
+	 * @param correctin Is true if the user has entered a correct input
+	 * @param steadintr Is true if the user needs a steady interest rate for their account
+	 * @param manywithdraws Is true if the user plans to make many monthly withdrawls with their account
+	 * @param checks Is true if the user requires checks for their account
+	 * @param maintfees Is true if the user is okay with maintainence fees for their account
+	 * @param initbalance Stores the inital balance that the user would deposit when the account is created
+	 * @param checking Stores the number which corresponds to the likelyhood of the user wanting a checking account
+	 * @param savings Stores the number which corresponds to the likelyhood of the user wanting a savings account
+	 * @param moneymarket Stores the number which corresponds to the likelyhood of the user wanting a money market account
+	 * 
+	 * Asks the user various questions which will determine their compatiblility with different types of accounts.
+	 * When the user answers that they would like one of the features of a certain type of account one is added 
+	 * to the compatibility score for that account.
+	 * At the end of this process the compatibilty score is displayed to the user and the user is asking if they agree
+	 * with the suggestions and would like to proceed with account creation.
+	 */
 	public static void main(String[] args) {
 		
 		Scanner instream = new Scanner(System.in);

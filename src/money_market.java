@@ -1,4 +1,12 @@
-
+/**
+ * 
+ *@author clark27b
+ * withdrawlim Holds the maximum number of monthly withdrawls
+ * monthlywithdraws Holds the amount of withdrawls the user has done this month
+ * checklim Holds the maximum amount of checks per month
+ * mincheck Holds the minimum value of checks to be subtracted from the account
+ * minbalance Holds the minimum balance of the account that the user must maintain
+ */
 public class money_market extends account {
 
 	protected int withdrawlim;
@@ -20,10 +28,26 @@ public class money_market extends account {
 		checklim = 10;
 		mincheckval = 200.0;
 	}
+	/**
+	 * 
+	 * @param chkamnt Holds the amount of the check to be subtracted from the account
+	 */
 	public void check(double chkamnt)
 	{
-		
+		if ((balance - chkamnt) < minbalance)
+		{
+			System.out.println("WIrting a check for $" + chkamnt + " will put you below the minimum account balance.");
+		}
+		else
+		{
+		balance = balance - chkamnt;
+		System.out.println("A check for $" + chkamnt + " has been subtracted from your account.");
+		}
 	}
+	/**
+	 * 
+	 * @param out Holds the amount the user wishes to withdraw
+	 */
 	public void withdraw(double out)
 	{
 		if (monthlywithdraws == withdrawlim)
@@ -42,6 +66,9 @@ public class money_market extends account {
 			
 		}
 	}
+	/**
+	 * Resets the monthly withdrawls count as if it were a new month
+	 */
 	public void newmonth()
 	{
 		monthlywithdraws = 0;

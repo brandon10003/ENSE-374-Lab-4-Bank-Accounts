@@ -1,4 +1,14 @@
-
+/**
+ * 
+ * @author clark27b
+ * intrrate Holds the interest rate of the account
+ * balance Holds the balance of the account
+ * atmfee Holds the fee for withdrawing money from an atm
+ * nsffee Holds the fee for not having significant balance in your account
+ * maintfee holds the annual maintainence fee of the account
+ * intrtype Represents the interest type. 0 for non-steady, 1 for monthly, 2 for bi-weekly.
+ *
+ */
 public class account {
 	
 	protected double intrrate;
@@ -7,16 +17,27 @@ public class account {
 	protected double nsffee;
 	protected double maintfee;
 	protected int intrtype;
-	
+	/**
+	 * 
+	 * @param in The amount to be deposited
+	 */
 	public void deposit(double in)
 	{
 		balance = balance + in;
 		System.out.println("$" + in + " has been deposited to your account.");
 	}
+	/**
+	 * 
+	 * @return	The account balance
+	 */
 	public double getBalance() 
 	{
 		return balance;
 	}
+	/**
+	 * divides the interest rate by 24 for bi weekly or 12 for weekly
+	 * then adds this compounding interest rate to one and multiplies that by the account balance
+	 */
 	public void calcInterest()
 	{
 		double terminterest;

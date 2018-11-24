@@ -1,4 +1,9 @@
-
+/**
+ * 
+ *@author clark27b
+ *@param withdrawlim Holds the maximum number of monthly withdrawls
+ *@param monthlywithdraws Holds the amount of withdrawls the user has done this month
+ */
 public class savings extends account {
 
 	protected int withdrawlim;
@@ -16,6 +21,10 @@ public class savings extends account {
 		monthlywithdraws = 0;
 		
 	}
+	/**
+	 * 
+	 * @param out holds the amount the user wishes to withdraw
+	 */
 	public void withdraw(double out)
 	{
 		if (monthlywithdraws == withdrawlim)
@@ -30,6 +39,9 @@ public class savings extends account {
 			
 		}
 	}
+	/**
+	 * Resets the monthly withdrawls count as if it were a new month
+	 */
 	public void newmonth()
 	{
 		monthlywithdraws = 0;
