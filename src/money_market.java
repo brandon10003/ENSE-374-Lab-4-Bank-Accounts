@@ -12,7 +12,7 @@ public class money_market extends account {
 		intrrate = 0.0;
 		balance = 0.0;
 		atmfee = 3.0;
-		nsffee = 45.0;
+		nsffee = 0.0;
 		maintfee = 25.0;
 		intrtype = 0;
 		minbalance = 5000.0;
